@@ -139,6 +139,12 @@ body {
           justify-content: center;
   padding-inline: 24px;
 }
+.page__title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
 
 .rate-card {
   position: relative;

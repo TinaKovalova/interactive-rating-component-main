@@ -19,6 +19,12 @@ body {
     align-items: center;
     justify-content: center;
     padding-inline: 24px;
+    &__title {
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
 }
 
 .rate-card {
