@@ -43,6 +43,9 @@ body {
         &._show-back {
             transform: rotateY(180deg);
         }
+        @media (min-width: 768px) {
+            border-radius: 30px;
+        }
     }
 
     // .rate-card__body-side
@@ -75,7 +78,7 @@ body {
             @media (min-width: 768px) {
                 padding-inline: 36.5px;
                 padding-block: 44.5px;
-                row-gap: 32spx;
+                row-gap: 32px;
             }
         }
     }
@@ -174,7 +177,14 @@ body {
         padding-block-start: 8px;
         padding-block-end: 4px;
         padding-inline: 12px;
+        line-height: 1.6;
         color: $color-orange-500;
+        @media (min-width: 768px) {
+            font-size: 15px;
+            padding-inline: 19px;
+            padding-block-start: 5px;
+            padding-block-end: 3px;
+        }
     }
 }
 .rate-form {
