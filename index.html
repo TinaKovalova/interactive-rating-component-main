@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive rating component</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <main class="page">
+    <div class="rate-card">
+      <div class="rate-card__body">
+        <div class="rate-card__body-side rate-card__body-side--front">
+          <div class="rate-card__icon-wrapper">
+            <img src="images/icon-star.svg" alt="yellow star" class="rate-card__icon">
+          </div>
+          <div class="rate-card__content">
+            <h4 class="rate-card__title">
+              How did we do?
+            </h4>
+            <p class="rate-card__text">
+              Please let us know how we did with your support request. All feedback is appreciated
+              to help us improve our offering!
+            </p>
+          </div>
+          <form action="#" class="rate-card__form rate-form" id="rate-form" name="rate-form">
+            <fieldset class="rate-form__radio-group">
+              <label for="rate-1" class="rate-form__label" aria-labelledby="rate-1">
+                <span aria-hidden="true">1</span>
+                <input type="radio" class="rate-form__radio-btn" name="rate" value="1" id="rate-1" aria-label="one">
+              </label>
+              <label for="rate-2" class="rate-form__label" aria-labelledby="rate-2">
+                <span aria-hidden="true">2</span>
+                <input type="radio" class="rate-form__radio-btn" name="rate" value="2" id="rate-2" aria-label="two">
+              </label>
+              <label for="rate-3" class="rate-form__label" aria-labelledby="rate-3">
+                <span aria-hidden="true">3</span>
+                <input type="radio" class="rate-form__radio-btn" name="rate" value="3" id="rate-3" aria-label="three">
+              </label>
+              <label for="rate-4" class="rate-form__label" aria-labelledby="rate-4">
+                <span aria-hidden="true">4</span>
+                <input type="radio" class="rate-form__radio-btn" name="rate" value="4" id="rate-4" aria-label="foure">
+              </label>
+              <label for="rate-5" class="rate-form__label" aria-labelledby="rate-5">
+                <span aria-hidden="true">5</span>
+                <input type="radio" class="rate-form__radio-btn" name="rate" value="5" id="rate-5" aria-label="five">
+              </label>
+            </fieldset>
+            <button type="submit" class="rate-form__button">Submit</button>
+          </form>
+        </div>
+        <div class="rate-card__body-side rate-card__body-side--back">
+          <div class="rate-card__icon-wrapper">
+            <img src="images/illustration-thank-you.svg" alt="yellow star" class="rate-card__icon">
+          </div>
+          <div class="rate-card__label-result">
+            You selected <span></span> out of 5
+          </div>
+          <div class="rate-card__content">
+            <h4 class="rate-card__title">
+              Thank you!
+            </h4>
+            <p class="rate-card__text">
+              We appreciate you taking the time to give a rating. If you ever need more support,
+              don’t hesitate to get in touch!
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
+  <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+@import "reset.scss";
+@import url("https://fonts.googleapis.com/css?family=Overpass:regular,600,700&display=swap");
+$color-grey-900: #262e38;
+$color-orange-500: #fc7614;
+$color-grey-500: #969fad;
+$color-grey-950: #131518;
+
+body {
+    font-family: "Overpass", sans-serif;
+    font-size: 14px;
+    background-color: $color-grey-950;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.page {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 24px;
+}
+
+.rate-card {
+    position: relative;
+    max-width: 337px;
+    min-height: 360px;
+    aspect-ratio: 337 / 360;
+    @media (min-width: 768px) {
+        max-width: 412px;
+        min-height: 416px;
+        aspect-ratio: 412 / 416;
+    }
+    // .rate-card__body
+
+    &__body {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        background: radial-gradient(98.96% 98.96% at 50% 0%, #232a34 0%, #181e27 100%);
+        transform-style: preserve-3d;
+        transition: transform 0.5s ease-out;
+        &._show-back {
+            transform: rotateY(180deg);
+        }
+    }
+
+    // .rate-card__body-side
+
+    &__body-side {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding-inline: 24px;
+        display: flex;
+        flex-direction: column;
+        backface-visibility: hidden;
+        // .rate-card__body-side--front
+
+        &.rate-card__body-side--front {
+            row-gap: 16px;
+            padding-block: 28.5px;
+            @media (min-width: 768px) {
+                padding-inline: 30.5px;
+                padding-block: 34.5px;
+            }
+        }
+        &.rate-card__body-side--back {
+            transform: rotateY(180deg);
+            row-gap: 24px;
+            align-items: center;
+            padding-block: 36px;
+            @media (min-width: 768px) {
+                padding-inline: 36.5px;
+                padding-block: 44.5px;
+                row-gap: 32spx;
+            }
+        }
+    }
+
+    // .rate-card__icon-wrapper
+
+    &__icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .rate-card__body-side--front & {
+            width: 40px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background-color: $color-grey-900;
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+        }
+        .rate-card__body-side--back & {
+            max-width: 144px;
+            aspect-ratio: 144 / 96;
+        }
+        @media (min-width: 768px) {
+            .rate-card__body-side--front & {
+                width: 48px;
+                &:not(:last-child) {
+                    margin-bottom: 16px;
+                }
+            }
+            .rate-card__body-side--back & {
+                max-width: 162px;
+                aspect-ratio: 162 / 108;
+            }
+        }
+    }
+
+    // .rate-card__icon
+
+    &__icon {
+        .rate-card__body-side--front & {
+            width: 35%; /* 14/40 */
+            aspect-ratio: 1 / 1;
+        }
+        .rate-card__body-side--back & {
+            width: 100%;
+            object-fit: contain;
+        }
+        @media (min-width: 768px) {
+            .rate-card__body-side--front & {
+                width: 33.333333%; /* 16/48 */
+            }
+        }
+    }
+
+    // .rate-card__content
+
+    &__content {
+        .rate-card__body-side--back & {
+            text-align: center;
+        }
+    }
+
+    // .rate-card__title
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.25;
+        color: #ffffff;
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        @media (min-width: 768px) {
+            font-size: 28px;
+        }
+    }
+
+    // .rate-card__text
+
+    &__text {
+        line-height: 1.57;
+        color: $color-grey-500;
+        @media (min-width: 768px) {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+    }
+
+    // .rate-card__label-result
+
+    &__label-result {
+        border-radius: 22.5px;
+        background: $color-grey-900;
+        padding-block-start: 8px;
+        padding-block-end: 4px;
+        padding-inline: 12px;
+        color: $color-orange-500;
+    }
+}
+.rate-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    //rate-form__radio-group
+    &__radio-group {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        border: none;
+        @media (min-width: 768px) {
+            gap: 24px;
+        }
+    }
+
+    // .rate-form__label
+
+    &__label {
+        width: 15.053763%; /* 42/279 */
+        aspect-ratio: 1 / 1;
+        position: relative;
+        padding: 5px;
+        border-radius: 50%;
+        background-color: $color-grey-900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & span {
+            margin-top: 3px;
+            color: $color-grey-500;
+            font-weight: 700;
+        }
+
+        &:has(.rate-form__radio-btn:focus) {
+            background-color: #ffffff;
+            & span {
+                color: $color-grey-900;
+            }
+        }
+        &:has(.rate-form__radio-btn:checked:not(:focus)) {
+            background-color: $color-orange-500;
+            & span {
+                color: $color-grey-900;
+            }
+        }
+        transition:
+            background-color 0.4s ease-out,
+            color 0.4s ease-out;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #ffffff;
+                & span {
+                    color: $color-grey-900;
+                }
+            }
+        }
+        @media (min-width: 768px) {
+            width: 14.529915%; /* 51/351 */
+            font-size: 16px;
+        }
+    }
+
+    // .rate-form__radio-btn
+
+    &__radio-btn {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        // clip: rect(0 0 0 0);
+        // clip-path: inset(100%);
+        white-space: nowrap;
+    }
+
+    // .rate-form__button
+
+    &__button {
+        border-radius: 22.5px;
+        background: $color-orange-500;
+        color: $color-grey-950;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1.87px;
+        line-height: 1.285;
+        padding-inline: 15px;
+        padding-block-start: 16px;
+        padding-block-end: 11px;
+        transition: background-color 0.4s ease-out;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #ffffff;
+            }
+        }
+    }
+    @media (min-width: 768px) {
+        row-gap: 32px;
+    }
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    & a {
+        color: hsl(228, 45%, 44%);
+    }
+}
